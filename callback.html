@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spotify Callback</title>
+</head>
+<body>
+  <h1>Callback alındı.</h1>
+  <p>Bu sayfa Spotify'dan dönen authorization code'u yakalamak için var.</p>
+
+  <script>
+    // URL'deki code parametresini al
+    const urlParams = new URLSearchParams(window.location.search);
+    const code = urlParams.get('code');
+
+    if (code) {
+      document.body.innerHTML += `<p><strong>Authorization Code:</strong> ${code}</p>`;
+    } else {
+      document.body.innerHTML += `<p style="color:red;">Code bulunamadı.</p>`;
+    }
+  </script>
+</body>
+</html>
